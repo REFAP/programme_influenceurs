@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gagne de l'argent avec le chatbot auto anti-arnaque</title>
+    <title>Programme Influenceurs Re-FAP - Gagnez avec l'Auto</title>
+    <meta name="description" content="Rejoignez le programme d'affiliation Re-FAP et gagnez des commissions en aidant les automobilistes. Kit créatif fourni, suivi en temps réel.">
+    
     <style>
         * {
             margin: 0;
@@ -12,24 +14,25 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: #000;
+            color: #ffffff;
+            background: #1a1a1a;
+            overflow-x: hidden;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 2rem;
         }
 
-        /* Section 1 - Hero */
+        /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #000 0%, #1a1a1a 50%, #000 100%);
-            color: white;
-            padding: 80px 0;
-            text-align: center;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
             position: relative;
             overflow: hidden;
         }
@@ -41,466 +44,832 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%23ff6600" opacity="0.1"/></svg>') repeat;
-            animation: float 20s infinite linear;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 102, 0, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 102, 0, 0.1) 0%, transparent 50%);
+            pointer-events: none;
         }
 
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            100% { transform: translateY(-100px); }
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            z-index: 1;
+            position: relative;
         }
 
-        .hero h1 {
-            font-size: 3.5em;
-            margin-bottom: 20px;
-            font-weight: bold;
-            background: linear-gradient(45deg, #ff6600, #ffaa00);
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ff6600, #ff8533);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            background-clip: text;
+            animation: slideInLeft 1s ease-out;
         }
 
-        .hero .subtitle {
-            font-size: 1.4em;
-            margin-bottom: 40px;
-            opacity: 0.9;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+        .hero-text .subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.8);
+            animation: slideInLeft 1s ease-out 0.2s both;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            animation: slideInLeft 1s ease-out 0.4s both;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ff6600;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
         }
 
         .cta-button {
-            display: inline-block;
-            background: linear-gradient(45deg, #ff6600, #ff8833);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #ff6600, #ff8533);
             color: white;
-            padding: 18px 40px;
             text-decoration: none;
+            padding: 1rem 2rem;
             border-radius: 50px;
-            font-size: 1.2em;
             font-weight: bold;
+            font-size: 1.1rem;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(255, 102, 0, 0.3);
-            position: relative;
-            z-index: 10;
+            box-shadow: 0 8px 25px rgba(255, 102, 0, 0.3);
+            animation: slideInLeft 1s ease-out 0.6s both;
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(255, 102, 0, 0.4);
+            box-shadow: 0 12px 35px rgba(255, 102, 0, 0.4);
         }
 
-        /* Section 2 - Comment ça marche */
+        .hero-visual {
+            position: relative;
+            animation: slideInRight 1s ease-out 0.3s both;
+        }
+
+        .hero-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            transform: rotate(-2deg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-card h3 {
+            color: #ff6600;
+            margin-bottom: 1rem;
+        }
+
+        /* How it works */
         .how-it-works {
-            background: #f8f9fa;
-            padding: 80px 0;
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.5em;
-            margin-bottom: 60px;
-            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #ff6600;
         }
 
-        .steps {
+        .steps-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
         }
 
-        .step {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
+        .step-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
-        .step:hover {
+        .step-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #ff6600, #ff8533);
+        }
+
+        .step-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 102, 0, 0.2);
         }
 
-        .step-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(45deg, #ff6600, #ff8833);
+        .step-number {
+            background: linear-gradient(135deg, #ff6600, #ff8533);
+            color: white;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
-            margin: 0 auto 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2em;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 0 auto 1rem;
         }
 
-        .step h3 {
-            font-size: 1.5em;
-            margin-bottom: 15px;
-            color: #333;
+        .step-card h3 {
+            color: #ff6600;
+            margin-bottom: 1rem;
         }
 
-        .step p {
-            color: #666;
-            font-size: 1.1em;
-        }
-
-        /* Section 3 - Gains */
+        /* Earnings potential */
         .earnings {
-            background: linear-gradient(135deg, #1a1a1a, #000);
-            color: white;
-            padding: 80px 0;
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
         }
 
-        .earnings-slider {
+        .earnings-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
         }
 
         .earning-card {
-            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
-            padding: 30px;
-            border-radius: 15px;
+            background: linear-gradient(135deg, rgba(255, 102, 0, 0.1) 0%, rgba(255, 102, 0, 0.05) 100%);
+            border: 2px solid rgba(255, 102, 0, 0.2);
+            border-radius: 16px;
+            padding: 2rem;
             text-align: center;
-            border: 2px solid #ff6600;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .earning-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 102, 0, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+            opacity: 0;
+        }
+
+        .earning-card:hover::before {
+            opacity: 1;
+            transform: rotate(45deg) translate(50%, 50%);
         }
 
         .earning-card:hover {
             transform: scale(1.05);
+            border-color: #ff6600;
+            box-shadow: 0 15px 30px rgba(255, 102, 0, 0.3);
         }
 
         .earning-amount {
-            font-size: 2.5em;
-            color: #ff6600;
+            font-size: 2.5rem;
             font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .earning-details {
-            opacity: 0.8;
-            margin-bottom: 15px;
-        }
-
-        /* Section 4 - Pourquoi ça cartonne */
-        .why-it-works {
-            background: white;
-            padding: 80px 0;
-        }
-
-        .benefits {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .benefit {
-            display: flex;
-            align-items: center;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            border-left: 5px solid #ff6600;
-        }
-
-        .benefit .check {
             color: #ff6600;
-            font-size: 1.5em;
-            margin-right: 15px;
+            margin-bottom: 0.5rem;
         }
 
-        /* Section 5 - Kit influenceur */
-        .kit-section {
-            background: #f8f9fa;
-            padding: 80px 0;
+        .earning-desc {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
         }
 
-        .kit-items {
+        .earning-detail {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Why it works */
+        .why-it-works {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+        }
+
+        .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            border-left: 4px solid #ff6600;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateX(5px);
+        }
+
+        .benefit-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        /* Kit section */
+        .kit-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        }
+
+        .kit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
         }
 
         .kit-item {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
             text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .kit-item:hover {
+            transform: translateY(-5px);
         }
 
         .kit-icon {
-            font-size: 3em;
-            margin-bottom: 20px;
-            color: #ff6600;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
         }
 
-        /* Section 6 - FAQ */
-        .faq {
-            background: white;
-            padding: 80px 0;
+        /* FAQ Section */
+        .faq-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .faq-item {
-            background: #f8f9fa;
-            margin-bottom: 20px;
-            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            margin-bottom: 1rem;
             overflow: hidden;
+            transition: all 0.3s ease;
         }
 
         .faq-question {
-            padding: 20px;
+            padding: 1.5rem;
             cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             font-weight: bold;
-            background: #ff6600;
-            color: white;
+            color: #ff6600;
             transition: background 0.3s ease;
         }
 
         .faq-question:hover {
-            background: #e55500;
+            background: rgba(255, 102, 0, 0.1);
         }
 
         .faq-answer {
-            padding: 20px;
-            display: none;
-            color: #666;
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            opacity: 0;
         }
 
         .faq-answer.active {
-            display: block;
+            padding: 0 1.5rem 1.5rem;
+            max-height: 200px;
+            opacity: 1;
         }
 
-        /* Section 7 - CTA Final */
-        .final-cta {
-            background: linear-gradient(135deg, #000, #1a1a1a);
-            color: white;
-            padding: 80px 0;
+        .faq-toggle {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        /* Section d'inscription */
+        .inscription-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        }
+        
+        .intro-box {
+            background: linear-gradient(135deg, rgba(255, 102, 0, 0.1) 0%, rgba(255, 102, 0, 0.05) 100%);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 102, 0, 0.2);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            text-align: left;
+        }
+        
+        .intro-box h2 {
+            color: #ff6600;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
             text-align: center;
         }
+        
+        .intro-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .benefits-list {
+            margin: 2rem 0;
+        }
+        
+        .benefit-item-intro {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+        
+        .benefit-item-intro.highlight {
+            background: rgba(255, 102, 0, 0.1);
+            padding: 1rem;
+            border-radius: 12px;
+            border-left: 4px solid #ff6600;
+            margin-top: 1.5rem;
+        }
+        
+        .benefit-icon-intro {
+            font-size: 1.3rem;
+            margin-right: 0.75rem;
+            flex-shrink: 0;
+        }
+        
+        .benefit-sublist {
+            margin-left: 2rem;
+            margin-top: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .benefit-sublist li {
+            margin-bottom: 0.5rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .form-instruction {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #ff6600;
+            margin-top: 2rem;
+            margin-bottom: 0;
+        }
+        
+        .form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-        .final-cta h2 {
-            font-size: 2.5em;
-            margin-bottom: 40px;
-            background: linear-gradient(45deg, #ff6600, #ffaa00);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        /* Animations */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5em;
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
             }
-            
-            .hero .subtitle {
-                font-size: 1.2em;
+
+            .hero-text h1 {
+                font-size: 2.5rem;
             }
-            
-            .section-title {
-                font-size: 2em;
-            }
-            
-            .steps {
+
+            .hero-stats {
                 grid-template-columns: 1fr;
             }
-            
-            .earnings-slider {
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .steps-grid,
+            .earnings-grid,
+            .benefits-grid,
+            .kit-grid {
                 grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
+
 <body>
-    <!-- Section 1 - Hero -->
+    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>💥 Gagne de l'argent en aidant tes abonnés à réparer leur voiture au meilleur prix</h1>
-            <p class="subtitle">
-                Envoie ton audience vers un chatbot expert anti-arnaque. On qualifie les besoins, on redirige vers un garage partenaire, tu encaisses à chaque lead confirmé.
-            </p>
-            <a href="https://airtable.com/appGeEstBq3KYfqcq/pag38qGQuFNz7kzHz/form" class="cta-button" target="_blank">🔗 Rejoindre le programme maintenant</a>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>💰 Gagne avec l'Auto</h1>
+                    <p class="subtitle">
+                        Rejoins le programme influenceurs Re-FAP et génère des revenus en aidant les automobilistes à résoudre leurs pannes
+                    </p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">25€</div>
+                            <div class="stat-label">Par conversion</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">3.5%</div>
+                            <div class="stat-label">Taux conversion</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">24h</div>
+                            <div class="stat-label">Validation</div>
+                        </div>
+                    </div>
+                    
+                    <a href="#inscription" class="cta-button">
+                        🚀 Rejoindre Maintenant
+                    </a>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="hero-card">
+                        <div class="icon">🚗</div>
+                        <h3>Assistant Auto Expert</h3>
+                        <p>Aide les automobilistes à diagnostiquer leurs pannes et trouve la meilleure solution sans se faire arnaquer</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Section 2 - Comment ça marche -->
+    <!-- How it works -->
     <section class="how-it-works">
         <div class="container">
-            <h2 class="section-title">Comment ça marche ?</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-icon">📱</div>
+            <h2 class="section-title">🔧 Comment ça marche ?</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
                     <h3>Tu postes ton lien</h3>
-                    <p>Vidéo, story, swipe-up, bio… tout fonctionne.</p>
+                    <p>Partage ton lien personnalisé sur tes réseaux avec un contenu qui aide ton audience automobile</p>
                 </div>
-                <div class="step">
-                    <div class="step-icon">🤖</div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
                     <h3>Le bot s'occupe du reste</h3>
-                    <p>Il discute avec tes abonnés, les oriente vers une solution fiable.</p>
+                    <p>Tes followers utilisent l'assistant pour diagnostiquer leur panne et trouvent le bon garage</p>
                 </div>
-                <div class="step">
-                    <div class="step-icon">💰</div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
                     <h3>Tu encaisses</h3>
-                    <p>Chaque lead validé = X € pour toi. Paiement automatique chaque mois.</p>
+                    <p>À chaque prise de RDV confirmée dans un garage partenaire, tu touches ta commission</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 3 - Gains -->
+    <!-- Earnings Potential -->
     <section class="earnings">
         <div class="container">
-            <h2 class="section-title">Combien tu peux gagner ?</h2>
-            <div class="earnings-slider">
+            <h2 class="section-title">💸 Potentiel de gains</h2>
+            <div class="earnings-grid">
                 <div class="earning-card">
-                    <div class="earning-amount">25 €</div>
-                    <div class="earning-details">1 000 vues → ~10 leads</div>
-                    <p>Parfait pour commencer</p>
+                    <div class="earning-amount">25€</div>
+                    <div class="earning-desc">1 000 vues</div>
+                    <div class="earning-detail">Avec 3.5% de conversion = 1 lead validé</div>
                 </div>
                 <div class="earning-card">
-                    <div class="earning-amount">200 €</div>
-                    <div class="earning-details">10 000 vues → ~80 leads</div>
-                    <p>Résultat solide</p>
+                    <div class="earning-amount">200€</div>
+                    <div class="earning-desc">10 000 vues</div>
+                    <div class="earning-detail">8 conversions moyennes</div>
                 </div>
                 <div class="earning-card">
-                    <div class="earning-amount">750 €</div>
-                    <div class="earning-details">50 000 vues → ~300 leads</div>
-                    <p>1 vidéo virale = jackpot 🎯</p>
+                    <div class="earning-amount">750€</div>
+                    <div class="earning-desc">50 000 vues</div>
+                    <div class="earning-detail">30 leads qualifiés</div>
                 </div>
             </div>
-            <p style="text-align: center; margin-top: 40px; font-size: 1.2em; opacity: 0.9;">
-                Et tu peux continuer à gagner même après : le bot travaille pour toi 24/7.
-            </p>
         </div>
     </section>
 
-    <!-- Section 4 - Pourquoi ça cartonne -->
+    <!-- Why it works -->
     <section class="why-it-works">
         <div class="container">
-            <h2 class="section-title">Pourquoi ça cartonne</h2>
-            <div class="benefits">
-                <div class="benefit">
-                    <span class="check">✅</span>
-                    <span>Sujet universel : tout le monde a une voiture</span>
+            <h2 class="section-title">🎯 Pourquoi ça cartonne ?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">✅</div>
+                    <div>
+                        <strong>Besoin réel</strong><br>
+                        Tout le monde a des problèmes de voiture et cherche de l'aide
+                    </div>
                 </div>
-                <div class="benefit">
-                    <span class="check">✅</span>
-                    <span>Problèmes concrets : voyant moteur, FAP bouché, panne…</span>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎁</div>
+                    <div>
+                        <strong>Service gratuit</strong><br>
+                        L'assistant est 100% gratuit, aucune barrière à l'entrée
+                    </div>
                 </div>
-                <div class="benefit">
-                    <span class="check">✅</span>
-                    <span>Positionnement fort : "Robin des Bois de la mécanique"</span>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🤖</div>
+                    <div>
+                        <strong>IA experte</strong><br>
+                        20 ans d'expérience Re-FAP intégrés dans l'assistant
+                    </div>
                 </div>
-                <div class="benefit">
-                    <span class="check">✅</span>
-                    <span>Aucun produit à vendre, pas de SAV, pas de bullshit</span>
+                <div class="benefit-item">
+                    <div class="benefit-icon">💯</div>
+                    <div>
+                        <strong>Pas d'arnaque</strong><br>
+                        Ton audience évite les garages qui font du commerce
+                    </div>
                 </div>
-                <div class="benefit">
-                    <span class="check">✅</span>
-                    <span>Taux de clics élevés</span>
+                <div class="benefit-item">
+                    <div class="benefit-icon">⚡</div>
+                    <div>
+                        <strong>Conversion rapide</strong><br>
+                        De la panne au RDV garage en quelques minutes
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 5 - Kit influenceur -->
+    <!-- Kit Influenceur -->
     <section class="kit-section">
         <div class="container">
-            <h2 class="section-title">Ce que tu obtiens</h2>
-            <div class="kit-items">
+            <h2 class="section-title">🎨 Kit Influenceur Fourni</h2>
+            <div class="kit-grid">
                 <div class="kit-item">
                     <div class="kit-icon">🔗</div>
-                    <h3>Lien tracké prêt à l'emploi</h3>
-                    <p>Personnalisé et optimisé pour tes réseaux</p>
+                    <h3>Lien Tracké</h3>
+                    <p>URL personnalisée avec tracking automatique</p>
                 </div>
                 <div class="kit-item">
-                    <div class="kit-icon">📊</div>
-                    <h3>Mini dashboard de suivi</h3>
-                    <p>Suis tes performances en temps réel</p>
+                    <div class="kit-icon">📱</div>
+                    <h3>Stories Templates</h3>
+                    <p>Visuels prêts pour Instagram & TikTok</p>
                 </div>
                 <div class="kit-item">
                     <div class="kit-icon">🎬</div>
-                    <h3>Vidéos & visuels prêts à poster</h3>
-                    <p>Contenu créatif adapté à tes plateformes</p>
+                    <h3>Scripts Vidéo</h3>
+                    <p>Accroches et scripts pour tes contenus</p>
                 </div>
                 <div class="kit-item">
-                    <div class="kit-icon">📋</div>
-                    <h3>Brief créatif</h3>
-                    <p>Guide pour maximiser tes conversions</p>
+                    <div class="kit-icon">📊</div>
+                    <h3>Dashboard Perso</h3>
+                    <p>Suivi temps réel de tes performances</p>
                 </div>
                 <div class="kit-item">
-                    <div class="kit-icon">💬</div>
-                    <h3>Contact dédié</h3>
-                    <p>Support personnalisé en cas de besoin</p>
+                    <div class="kit-icon">🎯</div>
+                    <h3>Support Dédié</h3>
+                    <p>Accompagnement pour optimiser tes gains</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 6 - FAQ -->
-    <section class="faq">
+    <!-- FAQ -->
+    <section class="faq-section">
         <div class="container">
-            <h2 class="section-title">Questions fréquentes</h2>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">Est-ce qu'il faut une grosse audience ?</div>
-                <div class="faq-answer">Non ! Même avec 1000 abonnés engagés, tu peux générer des revenus. La qualité prime sur la quantité.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">Je dois vendre un truc ?</div>
-                <div class="faq-answer">Absolument pas ! Tu rediriges simplement vers notre chatbot. Pas de vente, pas de SAV, pas de prise de tête.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">Quand suis-je payé ?</div>
-                <div class="faq-answer">Paiement automatique chaque mois pour tous les leads validés du mois précédent.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">Comment vous suivez les leads ?</div>
-                <div class="faq-answer">Ton lien est unique et tracké. Chaque conversion est automatiquement attribuée à ton compte.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">C'est légal ?</div>
-                <div class="faq-answer">100% légal ! Tu fais de l'affiliation pour un service d'aide automobile. Tout est déclaré et transparent.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">Est-ce que je peux tester sans engagement ?</div>
-                <div class="faq-answer">Oui ! Aucun engagement, tu peux arrêter quand tu veux. Test gratuit pour voir si ça marche avec ton audience.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">Et si j'ai une chaîne YouTube ou un blog ?</div>
-                <div class="faq-answer">Parfait ! Le programme fonctionne sur toutes les plateformes : YouTube, blog, TikTok, Instagram, Twitter...</div>
+            <h2 class="section-title">❓ Questions Fréquentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        Comment fonctionne le tracking ?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Chaque influenceur reçoit un lien unique qui track automatiquement tous les clics et conversions. Le système attribue chaque lead au bon influenceur.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        Quand suis-je payé(e) ?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Les paiements se font le 15 de chaque mois pour toutes les commissions validées du mois précédent. Paiement par virement bancaire.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        Y a-t-il un minimum de followers ?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Non, pas de minimum ! Que tu aies 1000 ou 100 000 followers, si ton audience s'intéresse à l'automobile, tu peux rejoindre le programme.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        Comment puis-je optimiser mes gains ?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Utilise les templates fournis, partage des cas concrets de pannes résolues, et engage avec ton audience sur leurs problèmes auto. Plus tu aides, plus tu gagnes !
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        Puis-je voir mes statistiques en temps réel ?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Oui ! Chaque influenceur a accès à un dashboard personnel avec ses stats : clics, conversions, gains, taux de conversion, historique des paiements.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        Que se passe-t-il si l'utilisateur ne prend pas RDV ?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Tu n'es payé(e) que pour les leads qualifiés qui aboutissent à une prise de RDV confirmée dans un garage partenaire. Pas de RDV = pas de commission.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        Puis-je utiliser le lien sur plusieurs plateformes ?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Absolument ! Utilise ton lien unique sur Instagram, TikTok, YouTube, ton blog, ou toute autre plateforme. Le tracking fonctionne partout.
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 7 - CTA Final -->
-    <section class="final-cta">
+    <!-- Formulaire d'inscription -->
+    <section id="inscription" class="inscription-section">
         <div class="container">
-            <h2>Rejoins les premiers créateurs à profiter du bot auto le plus malin du web</h2>
-            <a href="https://airtable.com/appGeEstBq3KYfqcq/pag38qGQuFNz7kzHz/form" class="cta-button" target="_blank">🔗 Demander mon lien personnalisé maintenant</a>
+            <div class="intro-box">
+                <h2>Bienvenue dans le programme influenceurs Re-FAP 👋</h2>
+                <p class="intro-text">
+                    Tu vas pouvoir recommander un chatbot expert qui aide les automobilistes à trouver la meilleure solution pour leur panne moteur, sans se faire plumer.
+                </p>
+                <div class="benefits-list">
+                    <div class="benefit-item-intro">
+                        <span class="benefit-icon-intro">🎯</span>
+                        <span>Tu touches une commission à chaque lead validé orienté vers un garage partenaire (prise de rendez-vous confirmée).</span>
+                    </div>
+                    <div class="benefit-item-intro">
+                        <span class="benefit-icon-intro">🎁</span>
+                        <span>Tu reçois :</span>
+                    </div>
+                    <ul class="benefit-sublist">
+                        <li>un lien personnalisé tracké</li>
+                        <li>un kit influenceur (visuels, accroches, vidéos)</li>
+                        <li>un mini-dashboard de suivi</li>
+                    </ul>
+                    <div class="benefit-item-intro highlight">
+                        <span class="benefit-icon-intro">✨</span>
+                        <span><strong>Aucune vente à faire, pas de produit à gérer. Ton contenu aide, ton lien convertit, tu encaisses.</strong></span>
+                    </div>
+                </div>
+                <p class="form-instruction">
+                    <strong>Remplis ce formulaire pour qu'on te crée ton lien 👇</strong>
+                </p>
+            </div>
+            
+            <div class="form-container">
+                <iframe 
+                    src="https://airtable.com/embed/appGeEstBq3KYfqcq/pag38qGQuFNz7kzHz/form"
+                    frameborder="0" 
+                    onmouseover="this.style.transform='scale(1.02)'" 
+                    onmouseout="this.style.transform='scale(1)'"
+                    style="background: transparent; border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; transition: transform 0.3s ease;"
+                    width="600" 
+                    height="800">
+                </iframe>
+            </div>
         </div>
     </section>
 
     <script>
-        function toggleFaq(element) {
-            const answer = element.nextElementSibling;
-            const isActive = answer.classList.contains('active');
+        // FAQ Toggle functionality
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const toggle = element.querySelector('.faq-toggle');
             
-            // Fermer toutes les FAQ
-            document.querySelectorAll('.faq-answer').forEach(answer => {
-                answer.classList.remove('active');
+            // Close other open FAQs
+            document.querySelectorAll('.faq-item.active').forEach(item => {
+                if (item !== faqItem) {
+                    item.classList.remove('active');
+                    item.querySelector('.faq-answer').classList.remove('active');
+                    item.querySelector('.faq-toggle').textContent = '+';
+                }
             });
             
-            // Ouvrir celle cliquée si elle n'était pas active
-            if (!isActive) {
-                answer.classList.add('active');
-            }
+            // Toggle current FAQ
+            faqItem.classList.toggle('active');
+            answer.classList.toggle('active');
+            toggle.textContent = faqItem.classList.contains('active') ? '×' : '+';
         }
 
-        // Animation au scroll
+        // Smooth scroll for CTA button
+        document.querySelector('.cta-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('#inscription').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+
+        // Scroll animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -509,23 +878,15 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.style.animation = 'fadeInUp 0.6s ease-out forwards';
                 }
             });
         }, observerOptions);
 
-        // Appliquer l'animation aux sections
-        document.querySelectorAll('section').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(30px)';
-            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(section);
+        // Observe elements for animation
+        document.querySelectorAll('.step-card, .earning-card, .benefit-item, .kit-item').forEach(el => {
+            observer.observe(el);
         });
-
-        // Hero toujours visible
-        document.querySelector('.hero').style.opacity = '1';
-        document.querySelector('.hero').style.transform = 'translateY(0)';
     </script>
 </body>
 </html>
