@@ -135,6 +135,17 @@
             animation: slideInRight 1s ease-out 0.3s both;
         }
 
+        .hero-card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-card-link:hover {
+            transform: scale(1.05);
+        }
+
         .hero-card {
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
             backdrop-filter: blur(20px);
@@ -143,6 +154,22 @@
             padding: 2rem;
             transform: rotate(-2deg);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .hero-card:hover {
+            border-color: rgba(255, 102, 0, 0.3);
+            box-shadow: 0 25px 50px rgba(255, 102, 0, 0.2);
+        }
+
+        .click-indicator {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #ff6600;
+            font-weight: bold;
+            text-align: center;
+            opacity: 0.8;
         }
 
         .hero-card .icon {
@@ -583,11 +610,14 @@
                 </div>
                 
                 <div class="hero-visual">
-                    <div class="hero-card">
-                        <div class="icon">🚗</div>
-                        <h3>Assistant Auto Expert</h3>
-                        <p>Aide les automobilistes à diagnostiquer leurs pannes et trouve la meilleure solution sans se faire arnaquer</p>
-                    </div>
+                    <a href="https://re-fap-autoai.vercel.app/" target="_blank" class="hero-card-link">
+                        <div class="hero-card">
+                            <div class="icon">🚗</div>
+                            <h3>Assistant Auto Expert</h3>
+                            <p>Aide les automobilistes à diagnostiquer leurs pannes et trouve la meilleure solution sans se faire arnaquer</p>
+                            <div class="click-indicator">👆 Tester l'assistant</div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
